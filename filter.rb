@@ -40,8 +40,11 @@ stopwords += [
 # First, fix the labeling error at the start of the first file.
 input.sub!('P:', 'I1:')
 
-# Remove odd characters, and quotes.
-["\f", '!', '?', '"', '-', '.', ',', '…'].each do |char|
+# Remove odd characters, quotes and bracketed sections.
+[
+  "\f", '!', '?', '"', '-', '.', ',', '…',
+  /\[[^\[]*\]/, /\([^(]*\)/
+].each do |char|
   input.gsub!(char, '')
 end
 
