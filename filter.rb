@@ -42,7 +42,7 @@ input.sub!('P:', 'I1:')
 
 # Remove odd characters, quotes and bracketed sections.
 [
-  "\f", '!', '?', '"', "'", '--', '.', ',', '…', '*', ';',
+  "\f", '!', '?', '"', "'", '’', '--', '.', ',', '…', '*', ';',
   /\[[^\[]*\]/, /\([^(]*\)/
 ].each do |char|
   input.gsub!(char, '')
