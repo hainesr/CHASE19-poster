@@ -100,6 +100,11 @@ if output.include?('i1:') || output.include?('p:')
   warn 'Unexpected token in the filtered output'
 end
 
+# We can finally remove numbers safely.
+output = output.map do |word|
+  word.gsub(/[0-9]/, '')
+end
+
 # Remove stopwords.
 output = output.delete_if do |word|
   stopwords.include?(word)
