@@ -6,7 +6,7 @@
 # Licence: BSD
 
 
-interviews_dir=../../Data/Interviews
+interviews_dir=data/interviews
 
 .PHONY: clean
 
