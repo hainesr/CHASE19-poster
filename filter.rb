@@ -9,33 +9,17 @@
 
 inputfile = ARGV[0]
 outputfile = ARGV[1]
-stopfile = 'stopwords.txt'
+stopfile1 = 'stopwords.txt'
+stopfile2 = 'extra-stopwords.txt'
 
 # Load the text naively stripped from the PDFs.
 input = File.read(inputfile)
 
-# Load the stopwords file and add some other words that we feel aren't useful.
-stopwords = File.readlines(stopfile).map(&:chomp).delete_if do |line|
+# Load the stopwords files.
+raw_stopwords = File.readlines(stopfile1) + File.readlines(stopfile2)
+stopwords = raw_stopwords.map(&:chomp).delete_if do |line|
   line.start_with?('#')
-end
-
-stopwords += [
-  'ah',
-  'basically',
-  "didn't",
-  'err',
-  'huh', 'humm',
-  "i'd", "i'm", "i've", "isn't", "it'll", "it's",
-  'oh', 'ok', 'okay', 'ow',
-  'mhmm', 'mm', 'mmhm', 'mmhmm', 'mmm',
-  'person01', 'person02',
-  'project01', 'project02', 'project03', 'project04', 'project05',
-  'tha', 'thank', "that's", "there's", 'try', 'trying',
-  'uh', 'uhhuh', 'uk', 'um', 'unless', 'using', 'usually',
-  "wasn't", "we're", "we've", 'whereas', "weren't",
-  "what's", "who's", "who've", 'whoever', "whoever's", 'wor',
-  'yeah', 'year', 'yes', "you're", "you've"
-]
+end.sort
 
 # First, fix the labeling error at the start of the first file.
 input.sub!('P:', 'I1:')

@@ -10,7 +10,7 @@ interviews_dir=../../Data/Interviews
 
 .PHONY: clean
 
-FilteredInterviews.txt: AllInterviews.txt stopwords.txt filter.rb
+FilteredInterviews.txt: AllInterviews.txt stopwords.txt extra-stopwords.txt filter.rb
 	ruby filter.rb $< $@
 
 AllInterviews.txt: AllInterviews.pdf
