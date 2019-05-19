@@ -7,3 +7,7 @@ Scripts and data for our poster, presented at [CHASE19](http://www.chaseresearch
 Preprint: https://arxiv.org/abs/1903.06039
 
 Data: https://doi.org/10.5281/zenodo.1345066
+
+### Licence
+
+All code is released under the BSD licence. See LICENCE for more details.
