@@ -43,6 +43,9 @@ end
   input.gsub!(sub, '\1\2')
 end
 
+# Hypenate 'version control' so we keep those semantics.
+input.gsub!('version control', 'version-control')
+
 # Normalize inconsistent labels.
 input.gsub!('Person1:', 'I1:')
 input.gsub!(/[^\n]\nPerson2:/, "\n\nP:")
