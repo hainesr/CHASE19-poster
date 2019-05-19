@@ -15,10 +15,11 @@ stopfile2 = 'extra-stopwords.txt'
 # Load the text naively stripped from the PDFs.
 input = File.read(inputfile)
 
-# Load the stopwords files.
+# Load the stopwords files. Remove 'r' from the stopwords so we
+# catch references to the programming language.
 raw_stopwords = File.readlines(stopfile1) + File.readlines(stopfile2)
 stopwords = raw_stopwords.map(&:chomp).delete_if do |line|
-  line.start_with?('#')
+  line.start_with?('#') || line == 'r'
 end.sort
 
 # First, fix the labeling error at the start of the first file.
