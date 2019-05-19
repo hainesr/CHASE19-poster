@@ -8,6 +8,14 @@ Preprint: https://arxiv.org/abs/1903.06039
 
 Data: https://doi.org/10.5281/zenodo.1345066
 
+### Requirements
+
+To process this data you will need:
+
+* `pdfunite`
+* `pdftotext`
+* `ruby` - version 2.4.1 is known to work.
+
 ### Licence
 
 All code is released under the BSD licence. See LICENCE for more details.
