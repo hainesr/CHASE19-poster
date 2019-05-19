@@ -67,6 +67,10 @@ carried
 carry
 cause
 causes
+certainty
+chance
+chances
+chasing
 cherry
 childs
 city
@@ -79,7 +83,9 @@ consideration
 couldnt
 council
 country
+couple
 cranny
+day
 days
 de
 dear
@@ -90,6 +96,7 @@ decision
 deconstructing
 dedicated
 deep
+definitely
 dense
 depending
 didnt
@@ -123,6 +130,8 @@ everybodys
 everyday
 exactly
 excitement
+extreme
+extremely
 fairly
 falls
 family
@@ -175,6 +184,7 @@ hits
 hm
 hmm
 hold
+hopefully
 horrible
 huge
 huh
