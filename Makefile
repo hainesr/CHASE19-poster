@@ -10,7 +10,7 @@ interviews_dir=${data_dir}/interviews
 
 .PHONY: clean
 
-FilteredInterviews.txt: AllInterviews.txt ${data_dir}/stopwords.txt ${data_dir}/extra-stopwords.txt filter.rb
+WordCounts.txt: AllInterviews.txt ${data_dir}/stopwords.txt ${data_dir}/extra-stopwords.txt filter.rb
 	ruby filter.rb $< $@
 
 AllInterviews.txt: AllInterviews.pdf
@@ -20,4 +20,4 @@ AllInterviews.pdf: ${interviews_dir}/Interview01.pdf
 	pdfunite ${interviews_dir}/*.pdf $@
 
 clean:
-	rm -f FilteredInterviews.txt AllInterviews.txt AllInterviews.pdf
+	rm -f WordCounts.txt AllInterviews.txt AllInterviews.pdf
