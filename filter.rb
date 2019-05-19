@@ -9,8 +9,8 @@
 
 inputfile = ARGV[0]
 outputfile = ARGV[1]
-stopfile1 = 'stopwords.txt'
-stopfile2 = 'extra-stopwords.txt'
+stopfile1 = 'data/stopwords.txt'
+stopfile2 = 'data/extra-stopwords.txt'
 
 # Load the text naively stripped from the PDFs.
 input = File.read(inputfile)

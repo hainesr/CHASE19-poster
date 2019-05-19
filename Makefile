@@ -5,12 +5,12 @@
 #
 # Licence: BSD
 
-
-interviews_dir=data/interviews
+data_dir=data
+interviews_dir=${data_dir}/interviews
 
 .PHONY: clean
 
-FilteredInterviews.txt: AllInterviews.txt stopwords.txt extra-stopwords.txt filter.rb
+FilteredInterviews.txt: AllInterviews.txt ${data_dir}/stopwords.txt ${data_dir}/extra-stopwords.txt filter.rb
 	ruby filter.rb $< $@
 
 AllInterviews.txt: AllInterviews.pdf
