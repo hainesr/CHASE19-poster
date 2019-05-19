@@ -42,10 +42,20 @@ input.sub!('P:', 'I1:')
 
 # Remove odd characters, quotes and bracketed sections.
 [
-  "\f", '!', '?', '"', '-', '.', ',', '…',
+  "\f", '!', '?', '"', "'", '--', '.', ',', '…', '*', ';',
   /\[[^\[]*\]/, /\([^(]*\)/
 ].each do |char|
   input.gsub!(char, '')
+end
+
+# Special treatment for dashes, so we don't lose hyphens, and we don't
+# join words that shouldn't be joined.
+[
+  /([^\w])-(\w)/,    # e.g. 'word-' -> 'word'
+  /(\w)-([^\w])/,    # e.g. '-word' -> 'word'
+  /([^\w])-([^\w])/  # remove dashes in space, e.g. ' - '
+].each do |sub|
+  input.gsub!(sub, '\1\2')
 end
 
 # Normalize inconsistent labels.
